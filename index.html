@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <nav class="navbar">
     <div class="nav-left">
       <a class="active" href="./index.html">Home</a>
@@ -20,6 +21,7 @@
     </div>
   </nav>
 
+  <!-- Hero with Dino -->
   <header class="hero" style="background-image:url('./assets/barbells.jpg'); background-size:cover; background-position:center;">
     <div class="hero-inner">
       <div class="brand">
@@ -28,10 +30,30 @@
       </div>
     </div>
 
-    <div class="controls" style="margin-top:16px;">
-      <a class="navbar" href="./components/helperpage/bar.html">Open: Top Cuisines (Bar)</a>
-      <a class="navbar" href="./components/helperpage/scatter.html">Open: Macros Explorer (Scatter)</a>
-      <a class="navbar" href="./components/helperpage/pie.html">Open: Distributions (Pie)</a>
+    <!-- DINO ANIMATION -->
+    <div class="hero-animation">
+      <div class="dino">
+        <svg viewBox="0 0 200 200" fill="#ffd400">
+          <path d="M40 160 L70 100 L100 160 Z"></path>
+          <ellipse cx="85" cy="95" rx="22" ry="18"></ellipse>
+        </svg>
+      </div>
+
+      <div class="food">
+        <svg viewBox="0 0 100 100" fill="#ffb800">
+          <circle cx="50" cy="50" r="35"></circle>
+        </svg>
+      </div>
+      <div class="food">
+        <svg viewBox="0 0 100 100" fill="#ffd400">
+          <rect x="15" y="25" width="70" height="40" rx="10"></rect>
+        </svg>
+      </div>
+      <div class="food">
+        <svg viewBox="0 0 100 100" fill="#ffaa00">
+          <polygon points="20,80 80,80 50,20"></polygon>
+        </svg>
+      </div>
     </div>
   </header>
 
@@ -41,16 +63,19 @@
       <p>See the most frequent cuisines; adjust <em>Top N</em> and filter by cuisine.</p>
       <a href="./components/helperpage/bar.html">Open →</a>
     </article>
+
     <article class="card">
       <h3>Macros Explorer (Scatter)</h3>
       <p>Pick X/Y from Protein/Carbs/Fat; filter by cuisine; hover to inspect points.</p>
       <a href="./components/helperpage/scatter.html">Open →</a>
     </article>
+
     <article class="card">
       <h3>Distributions (Pie)</h3>
       <p>Compare share by Diet type or Cuisine; group low counts into “Other”.</p>
       <a href="./components/helperpage/pie.html">Open →</a>
     </article>
   </main>
+
 </body>
 </html>
