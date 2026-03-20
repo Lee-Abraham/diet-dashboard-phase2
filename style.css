@@ -1,0 +1,154 @@
+/* === Gym Theme: Black + Yellow === */
+:root{
+  --bg: #0b0b0c;          /* near-black */
+  --panel: #151516;       /* dark card */
+  --ink: #f5f5f7;         /* light text */
+  --muted: #b9b9c2;
+  --accent: #ffd400;      /* gym yellow */
+  --accent-2: #ffb800;    /* deeper yellow for hovers */
+  --border: #2b2b2e;
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 800px at 20% -20%, #111 0%, rgba(0,0,0,0) 60%),
+    radial-gradient(1200px 800px at 120% 120%, #111 0%, rgba(0,0,0,0) 60%),
+    var(--bg);
+  font: 15px/1.5 system-ui, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+/* --- Header / Hero --- */
+.hero{
+  position:relative;
+  border-bottom:1px solid var(--border);
+  padding:28px 20px 24px;
+  background:
+    linear-gradient(180deg, rgba(255,212,0,0.10), rgba(255,212,0,0) 40%),
+    linear-gradient(90deg, rgba(255,212,0,0.05) 0%, rgba(255,184,0,0.05) 100%);
+}
+.hero-inner{
+  display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+}
+.brand{
+  display:flex; align-items:center; gap:14px;
+}
+.brand .plate{
+  width:42px; height:42px; border-radius:50%;
+  border:3px solid var(--accent);
+  box-shadow: inset 0 0 0 3px #222, 0 0 0 2px #000;
+  position:relative;
+}
+.brand .plate::after{
+  content:""; position:absolute; inset:10px; border:2px solid var(--accent); border-radius:50%;
+}
+.brand h1{
+  margin:0; font-size:20px; letter-spacing:.4px;
+}
+.brand h1 span{ color:var(--accent); }
+
+/* barbell hero image block */
+.hero-img{
+  flex:1 1 320px; min-height:160px;
+  background-position:center right;
+  background-repeat:no-repeat;
+  background-size:cover;
+  border-radius:12px;
+  border:1px solid var(--border);
+  box-shadow: 0 0 0 1px #000 inset, 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Controls row */
+.controls{
+  display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+  margin-top:12px;
+}
+select, input[type="text"], button{
+  background:var(--panel); color:var(--ink);
+  border:1px solid var(--border); border-radius:10px;
+  padding:10px 12px; outline:none;
+}
+select:focus, input[type="text"]:focus{
+  border-color:var(--accent);
+  box-shadow: 0 0 0 2px rgba(255,212,0,.2);
+}
+button{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color:#000; font-weight:700; border:none; cursor:pointer;
+}
+button:hover{ filter:brightness(1.02); }
+button:active{ transform: translateY(1px); }
+
+/* --- Layout --- */
+.container{ padding:22px; }
+.grid{
+  display:grid; gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.card{
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+}
+.card h3{ margin:.2rem 0 1rem 0; font-size:16px; }
+.card small{ color:var(--muted); }
+
+/* --- Meta box --- */
+#meta{
+  margin:0; padding:12px; background:#0e0e10; border-radius:10px;
+  border:1px dashed var(--border); color:var(--muted);
+}
+
+/* --- Footer --- */
+footer{
+  padding:18px 22px; color:var(--muted);
+  border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;
+}
+.badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 10px; border-radius:999px; background:#101012; border:1px solid var(--border);
+}
+.badge .dot{
+  width:8px; height:8px; border-radius:50%; background:var(--accent);
+}
+
+/* --- Icon helpers (if you add inline SVGs) --- */
+.icon{
+  width:18px; height:18px; vertical-align:-3px; margin-right:6px; fill:var(--accent);
+}
+
+/* local image example */
+.hero-img{ background-image:url("./assets/barbells.jpg"); }
+
+/* --- Top navigation --- */
+nav.navbar{
+  display:flex; gap:16px; align-items:center; justify-content:space-between;
+  padding:10px 16px; border-bottom:1px solid var(--border); background:#0d0d0f;
+}
+.nav-left, .nav-right{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+.navbar a{
+  color:var(--ink); text-decoration:none; padding:8px 12px; border-radius:10px;
+  border:1px solid var(--border); background:#101012;
+}
+.navbar a.active, .navbar a:hover{
+  border-color:var(--accent); box-shadow:0 0 0 2px rgba(255,212,0,.2) inset;
+}
+.badge{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border-radius:999px; background:#101012; border:1px solid var(--border); }
+.dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); }
+.hero{ padding:24px 20px; }
+.container{ padding:22px; }
+.grid{ display:grid; gap:16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.card{ background:var(--panel); border:1px solid var(--border); border-radius:14px; padding:16px; box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+label, select, input, button{ font-size:14px; }
+select, input[type="text"], input[type="number"], input[type="range"], button{
+  background:var(--panel); color:var(--ink); border:1px solid var(--border); border-radius:10px; padding:8px 10px;
+}
+button{ background: linear-gradient(180deg, var(--accent), var(--accent-2)); color:#000; font-weight:700; border:none; cursor:pointer; }
+.controls{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:12px 0; }
+pre#meta{ margin:0; padding:12px; background:#0e0e10; border-radius:10px; border:1px dashed var(--border); color:var(--muted); }

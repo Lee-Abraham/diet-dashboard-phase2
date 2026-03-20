@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Macros Explorer (Scatter)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="../../index.html">Home</a>
+      <a href="./bar.html">Bar</a>
+      <a class="active" href="./scatter.html">Scatter</a>
+      <a href="./pie.html">Pie</a>
+    </div>
+    <div class="nav-right">
+      <button id="btnDownload">Download PNG</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="controls">
+      <label>Dataset</label>
+      <select id="dataset"></select>
+      <label>X</label>
+      <select id="axisX">
+        <option value="protein">Protein(g)</option>
+        <option value="carbs">Carbs(g)</option>
+        <option value="fat">Fat(g)</option>
+      </select>
+      <label>Y</label>
+      <select id="axisY">
+        <option value="fat">Fat(g)</option>
+        <option value="carbs">Carbs(g)</option>
+        <option value="protein">Protein(g)</option>
+      </select>
+      <label>Filter cuisine</label>
+      <input id="filterCuisine" placeholder="e.g. italian" />
+      <button id="btnLoad">Load</button>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Scatter — Macros</h3>
+        <canvas id="scatterPF"></canvas>
+      </article>
+      <article class="card">
+        <h3>ℹ️ Metadata</h3>
+        <pre id="meta"></pre>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./scatter.js"></script>
+</body>
+</html>
+``

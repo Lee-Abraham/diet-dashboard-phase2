@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Top Cuisines (Bar)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="../../index.html">Home</a>
+      <a class="active" href="./bar.html">Bar</a>
+      <a href="./scatter.html">Scatter</a>
+      <a href="./pie.html">Pie</a>
+    </div>
+    <div class="nav-right">
+      <button id="btnDownload">Download PNG</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="controls">
+      <label>Dataset</label>
+      <select id="dataset"></select>
+      <label>Filter cuisine</label>
+      <input id="filterCuisine" placeholder="e.g. american" />
+      <label>Top N</label>
+      <input type="range" id="topN" min="3" max="20" value="10" />
+      <span id="topNVal">10</span>
+      <button id="btnLoad">Load</button>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Bar — Top cuisines</h3>
+        <canvas id="barCuisine"></canvas>
+      </article>
+      <article class="card">
+        <h3>ℹ️ Metadata</h3>
+        <pre id="meta"></pre>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./bar.js"></script>
+</body>
+</html>

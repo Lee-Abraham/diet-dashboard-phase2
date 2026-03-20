@@ -2,63 +2,55 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Diet Dashboard (Phase 2)</title>
+  <title>Diet Dashboard • Phase 2</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root { font-family: system-ui, Segoe UI, Roboto, sans-serif; color-scheme: light dark; }
-    body { margin: 24px; }
-    header { margin-bottom: 16px; }
-    .row { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-    .card { padding: 16px; border: 1px solid #ccc; border-radius: 12px; background: #fff0; }
-    label, select, button { font-size: 14px; }
-    pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
-  </style>
+  <link rel="preload" href="assets/barbells.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Diet Dashboard (Azure Phase 2)</h1>
-    <p>Live data from Azure Function + Blob Storage</p>
-    <div>
-      <label for="dataset">Dataset: </label>
-      <select id="dataset">
-        <option>All_Diets.csv</option>
-        <option>keto.csv</option>
-        <option>dash.csv</option>
-        <option>mediterranean.csv</option>
-        <option>paleo.csv</option>
-        <option>vegan.csv</option>
-      </select>
-      <label for="filterCuisine" style="margin-left:12px;">Filter cuisine (contains): </label>
-      <input id="filterCuisine" placeholder="e.g. american" />
-      <button id="load">Load</button>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a class="active" href="./index.html">Home</a>
+      <a href="./components/helperpage/bar.html">Bar</a>
+      <a href="./components/helperpage/scatter.html">Scatter</a>
+      <a href="./components/helperpage/pie.html">Pie</a>
+    </div>
+    <div class="nav-right">
+      <span class="badge"><span class="dot"></span> Azure Static Web Apps</span>
+    </div>
+  </nav>
+
+  <header class="hero" style="background-image:url('./assets/barbells.jpg'); background-size:cover; background-position:center;">
+    <div class="hero-inner">
+      <div class="brand">
+        <div class="plate" aria-hidden="true"></div>
+        <h1><span>Diet</span> Dashboard</h1>
+      </div>
+    </div>
+
+    <div class="controls" style="margin-top:16px;">
+      <a class="navbar" href="./components/helperpage/bar.html">Open: Top Cuisines (Bar)</a>
+      <a class="navbar" href="./components/helperpage/scatter.html">Open: Macros Explorer (Scatter)</a>
+      <a class="navbar" href="./components/helperpage/pie.html">Open: Distributions (Pie)</a>
     </div>
   </header>
 
-  <section class="row">
-    <div class="card">
-      <h3>ℹ️ Metadata</h3>
-      <pre id="meta">Click "Load" to fetch data…</pre>
-      <small>Shows Function’s <b>record_count</b> and <b>execution_time_ms</b> from your API response.</small>
-    </div>
-
-    <div class="card">
-      <h3>📊 Bar — Top cuisines (preview)</h3>
-      <canvas id="barCuisine"></canvas>
-    </div>
-
-    <div class="card">
-      <h3>🟣 Scatter — Protein vs Fat (preview)</h3>
-      <canvas id="scatterPF"></canvas>
-      <small>Uses columns like <code>Protein(g)</code> and <code>Fat(g)</code> when present.</small>
-    </div>
-
-    <div class="card">
-      <h3>🥧 Pie — Diet type share (preview)</h3>
-      <canvas id="pieDiet"></canvas>
-    </div>
-  </section>
-
-  https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js</script>
-  ./app.js</script>
+  <main class="container grid">
+    <article class="card">
+      <h3>📊 Top Cuisines (Bar)</h3>
+      <p>See the most frequent cuisines; adjust <em>Top N</em> and filter by cuisine.</p>
+      <a href="./components/helperpage/bar.html">Open →</a>
+    </article>
+    <article class="card">
+      <h3>🟣 Macros Explorer (Scatter)</h3>
+      <p>Pick X/Y from Protein/Carbs/Fat; filter by cuisine; hover to inspect points.</p>
+      <a href="./components/helperpage/scatter.html">Open →</a>
+    </article>
+    <article class="card">
+      <h3>🥧 Distributions (Pie)</h3>
+      <p>Compare share by Diet type or Cuisine; group low counts into “Other”.</p>
+      <a href="./components/helperpage/pie.html">Open →</a>
+    </article>
+  </main>
 </body>
 </html>

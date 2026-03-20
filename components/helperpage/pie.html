@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Distributions (Pie)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="../../index.html">Home</a>
+      <a href="./bar.html">Bar</a>
+      <a href="./scatter.html">Scatter</a>
+      <a class="active" href="./pie.html">Pie</a>
+    </div>
+    <div class="nav-right">
+      <button id="btnDownload">Download PNG</button>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="controls">
+      <label>Dataset</label>
+      <select id="dataset"></select>
+      <label>Group by</label>
+      <select id="groupBy">
+        <option value="diet">Diet type</option>
+        <option value="cuisine">Cuisine</option>
+      </select>
+      <label>Min count</label>
+      <input id="minCount" type="number" value="2" min="1" max="50" />
+      <button id="btnLoad">Load</button>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Pie — Distribution</h3>
+        <canvas id="pie"></canvas>
+      </article>
+      <article class="card">
+        <h3>ℹ️ Metadata</h3>
+        <pre id="meta"></pre>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./pie.js"></script>
+</body>
+</html>
